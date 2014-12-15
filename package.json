@@ -5,7 +5,7 @@
   "Author": "Bart Caris",
   "Version": "0.0.1",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www/app.js"
   },
   "dependencies": {
     "express": "~4.9.0",
