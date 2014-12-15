@@ -3,9 +3,12 @@
  */
 
 var mongoose  = require('mongoose');
-console.log('db file entered');
-//mongoose.connect('mongodb://localhost/test');
-mongoose.connect(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
+
+//var connestionString = 'mongodb://localhost/test';
+var connestionString = process.env.CUSTOMCONNSTR_MONGOLAB_URI;
+
+console.log('connecting to ' + connestionString);
+mongoose.connect(connestionString);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -15,7 +18,7 @@ db.once('open', function callback () {
     name: String,
     lastName: String,
     Rating: String
-  })
+  });
 
   clientsSchema.virtual('name.full').get(function () {
     return this.name.first + ' ' + this.name.last;
@@ -30,9 +33,9 @@ db.once('open', function callback () {
   clientsSchema.methods.speak = function () {
     var greeting = this.name
       ? "My name is " + this.name.full
-      : "I don't have a name"
+      : "I don't have a name";
     console.log(greeting);
-  }
+  };
 
     mongoose.model('Client', clientsSchema);
 

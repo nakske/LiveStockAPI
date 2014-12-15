@@ -2,6 +2,8 @@
   <configuration default="false" name="bin/www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" path-to-js-file="bin/www" node-parameters="/usr/local/bin/nodemon" working-dir="$PROJECT_DIR$">
     <envs>
       <env name="DEBUG" value="LiveStockAPI" />
+      <env name="CUSTOMCONNSTR_MONGOLAB_URI" value="mongodb://MongoLab:ZaTSkkimC08X7KHC_rNSKqWSnIaHcRmedSeyBJhn1.4-@ds056727.mongolab.com:56727/MongoLab" />
+      <env name="CUSTOMCONNSTR_LIVESTOCLK_URI" value="mongodb://nakske:daimler10@ds060977.mongolab.com:60977/livestock" />
     </envs>
     <browser url="http://localhost:3000/" />
     <RunnerSettings RunnerId="Basic" />

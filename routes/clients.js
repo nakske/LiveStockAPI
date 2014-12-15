@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var db = require('../db/db');
 var express = require('express');
 var router = express.Router();
 
@@ -13,6 +12,7 @@ router.get('/', function(req, res) {
     if (err) return console.error(err);
 
       res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8000');
+      res.setHeader('Access-Control-Allow-Origin', 'http://livestockhq.azurewebsites.net');
       res.json(clients);
   })
 
